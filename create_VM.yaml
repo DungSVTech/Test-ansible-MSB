@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  collections:
+    - community.vmware
   vars_files: vars/env.yaml
   gather_facts: yes
   become: true
