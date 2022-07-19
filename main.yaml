@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars_files: vars/env.yaml
+  gather_facts: yes
+  become: true
+  tasks:     
+    - name: create VM
+      include: create_VM.yaml
+    
+    - name: Add new host to Inventory
+      include: put_new_inventory.yaml

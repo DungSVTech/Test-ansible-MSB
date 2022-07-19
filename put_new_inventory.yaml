@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  vars_files: vars/env.yaml
+  gather_facts: yes
+  become: true
+  tasks: 
+    - name: Add new Inventory
+      uri:
+        url: https://10.1.16.16/api/v2/hosts
+        user: "{{ user_ansible_tower }}"
+        password: "{{ pass_ansible_tower }}"
+        method: POST
+        name: "{{ vm.networks.ip }}"
+        inventory: "{{ inv_ansible_tower }}"
+        enabled: True
