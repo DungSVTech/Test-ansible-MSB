@@ -13,13 +13,13 @@
         password: "{{ vcenter_password }}"
         datacenter: "{{ vcenter_datacenter }}"
         validate_certs: no
-        resource_pool: "{{ vm.resource_pool }}"
+        resource_pool: "{{ vm['resource_pool'] }}"
         folder: /test-msb
-        name: "{{ vm.name }}"
+        name: "{{ vm['name'] }}"
         state: poweredon
         template: centos7-2009
-        esxi_hostname: "{{ vm.esxi_hostname }}"
-        disk: "{{ vm.disk }}"
+        esxi_hostname: "{{ vm['esxi_hostname'] }}"
+        disk: "{{ vm['disk'] }}"
         hardware:
           memory_mb: 4096
           num_cpus: 2
@@ -30,7 +30,7 @@
           hotremove_cpu: True
           hotadd_memory: False
           boot_firmware: "efi"
-        networks: "{{ vm.networks }}"
+        networks: "{{ vm['networks'] }}"
         customization:
           dns_servers: 8.8.8.8 
         wait_for_ip_address: true
