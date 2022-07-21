@@ -17,7 +17,7 @@
         folder: /test-msb
         name: "{{ vm_name }}"
         state: poweredon
-        template: centos7-2009
+        template: msb-base-cen7
         esxi_hostname: "{{ esxi_hostname }}"
         disk: "{{ disk }}"
         hardware:
