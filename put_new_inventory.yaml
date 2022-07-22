@@ -6,10 +6,10 @@
   tasks: 
     - name: Add new Inventory
       uri:
-        url: https://10.1.16.16/api/v2/hosts
+        url: https://10.1.16.16/api/v2/inventories/2/hosts/
         user: "{{ user_ansible_tower }}"
         password: "{{ pass_ansible_tower }}"
         method: POST
         name: "{{ host_ansible }}"
-        inventory: "{{ inv_ansible_tower }}"
         enabled: True
+        instance_id: ""
